@@ -1,77 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fluxo Governança</title>
 
+<style>
 body {
-  font-family: Segoe UI;
-  background: #f5f5f5;
+  font-family: Segoe UI, Arial;
+  background: #f4f6f9;
   margin: 0;
+}
+
+/* Container geral */
+.flow-container {
   padding: 30px;
 }
 
-/* Container */
-.flow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Blocos */
-.step {
+/* Swimlanes */
+.lane {
+  border-top: 1px solid #ccc;
+  padding: 25px 0;
   position: relative;
-  width: 180px;
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  border: 2px solid #0078d4;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.step:hover {
-  background: #0078d4;
-  color: white;
-  transform: translateY(-5px);
+.lane-title {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 12px;
+  color: #555;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Linha horizontal de itens */
+.row {
+  display: flex;
+  gap: 40px;
+  margin-left: 60px;
+}
+
+/* Caixa de processo */
+.box {
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 160px;
+  text-align: center;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover efeito */
+.box:hover {
+  background-color: #eaf3ff;
+  transform: translateY(-2px);
+}
+
+/* Decisão (diamante) */
+.decision {
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+  border: 2px solid #c9a200;
+  background: #fffdf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.decision span {
+  transform: rotate(-45deg);
+  text-align: center;
+  font-size: 12px;
 }
 
 /* Tooltip */
-.step::after {
-  content: "Adicione aqui seu texto";
+.tooltip {
   position: absolute;
-  bottom: -60px;
+  bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
-  background: #323130;
-  color: white;
+  background: #1f2937;
+  color: #fff;
   padding: 10px;
   border-radius: 8px;
   font-size: 12px;
   white-space: nowrap;
   opacity: 0;
+  transition: 0.3s;
   pointer-events: none;
-  transition: 0.3s ease;
 }
 
-/* Mostrar tooltip */
-.step:hover::after {
+.box:hover .tooltip,
+.decision:hover .tooltip {
   opacity: 1;
 }
 
-/* Linha */
-.line {
-  height: 3px;
-  background: #ccc;
-  flex-grow: 1;
-}
-
-/* Título */
-h2 {
-  margin-bottom: 30px;
+/* Linha conectora simples */
+.connector {
+  height: 2px;
+  background: #888;
+  width: 40px;
+  align-self: center;
 }
 
 </style>
@@ -79,33 +114,91 @@ h2 {
 
 <body>
 
-<h2>Governance Operating Model</h2>
+<div class="flow-container">
 
-<div class="flow">
+  <!-- LANE 1 -->
+  <div class="lane">
+    <div class="lane-title">PMO</div>
 
-  <div class="step" onclick="openLink()">Kick-off Meeting</div>
+    <div class="row">
+      <div class="box" onclick="openLink()">
+        Kick-Off Meeting
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
 
-  <div class="line"></div>
+      <div class="connector"></div>
 
-  <div class="step" onclick="openLink()">Planning Approved</div>
+      <div class="box" onclick="openLink()">
+        Project Updates
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
 
-  <div class="line"></div>
+      <div class="connector"></div>
 
-  <div class="step" onclick="openLink()">Project Tasks</div>
+      <div class="decision" onclick="openLink()">
+        <span>Impact Mitigated?</span>
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
+    </div>
+  </div>
 
-  <div class="line"></div>
+  <!-- LANE 2 -->
+  <div class="lane">
+    <div class="lane-title">Governance Owner</div>
 
-  <div class="step" onclick="openLink()">Timeline Updated</div>
+    <div class="row">
+      <div class="box" onclick="openLink()">
+        New Project Start
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
 
-  <div class="line"></div>
+      <div class="connector"></div>
 
-  <div class="step" onclick="openLink()">Decision Making</div>
+      <div class="box" onclick="openLink()">
+        Timeline Update
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="decision" onclick="openLink()">
+        <span>Approved?</span>
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANE 3 -->
+  <div class="lane">
+    <div class="lane-title">Team</div>
+
+    <div class="row">
+      <div class="box" onclick="openLink()">
+        Task Execution
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="box" onclick="openLink()">
+        Updates Logged
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="box" onclick="openLink()">
+        Report Generated
+        <div class="tooltip">Adicione aqui seu texto</div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
 <script>
 function openLink() {
-  window.open("https://abbott.sharepoint.com/sites/BR-EPD-GOVERNANCE", "_blank");
+  window.open("https://example.com", "_blank");
 }
 </script>
 
