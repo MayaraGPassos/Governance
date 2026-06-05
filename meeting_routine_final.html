@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance Meeting Routine</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: transparent; /* Seamless embedding */
+        }
+        h2, h3, h4, .font-display {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom animations */
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        .active-node {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="p-2 md:p-4">
+
+    <div class="max-w-5xl mx-auto space-y-6">
+        
+        <!-- VISUAL MEETING ROUTINE MAP -->
+        <div class="bg-white rounded-[24px] p-4 md:p-8 shadow-sm">
+            <div class="text-center mb-6">
+                <span class="bg-[#002060]/10 text-[#002060] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Governance Operating Model</span>
+                <h2 class="text-xl md:text-3xl font-bold text-[#002060] mt-2">Meeting Routine Cadence</h2>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">Click on any stage or tier below to explore participants, roles, and meeting purposes.</p>
+            </div>
+
+            <!-- Flowchart Container (100% responsive, no fixed min-width, no scroll) -->
+            <div class="bg-slate-50/50 rounded-2xl p-4 md:p-8">
+                <!-- Flex layout that stacks on mobile and spreads on large screens -->
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-2 w-full relative">
+                    
+                    <!-- Line connector background (only visible on large screens) -->
+                    <div class="absolute left-8 right-8 top-1/2 h-0.5 bg-slate-200 -translate-y-1/2 hidden lg:block z-0"></div>
+
+                    <!-- Stage 1: Tier 2 Planning (Light Teal-Blue) -->
+                    <div onclick="selectTier('tier2')" id="node-tier2" class="active-node z-10 cursor-pointer w-full lg:w-[18%] bg-white border-2 border-[#008080] rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group scale-105">
+                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#008080]/5 text-[#008080] flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform">
+                            <i data-lucide="calendar-range" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-[#008080] block mb-0.5 md:mb-1">Tier 2</span>
+                        <h4 class="font-bold text-slate-800 text-xs mb-1">Planning</h4>
+                        <span class="text-[8px] md:text-[9px] bg-[#008080]/5 text-[#008080] px-2 py-0.5 rounded-full font-semibold">Weekly Cycle</span>
+                    </div>
+
+                    <!-- Arrow (Vertical on mobile, Horizontal on desktop) -->
+                    <div class="text-slate-300 z-10 my-1 lg:my-0">
+                        <i data-lucide="chevron-down" class="w-4 h-4 lg:hidden"></i>
+                        <i data-lucide="chevron-right" class="w-4 h-4 hidden lg:block"></i>
+                    </div>
+
+                    <!-- Stage 2: Tier 1 Follow-Up (Royal Blue) -->
+                    <div onclick="selectTier('tier1')" id="node-tier1" class="z-10 cursor-pointer w-full lg:w-[18%] bg-white border border-slate-200 hover:border-[#4169E1] rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group">
+                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4169E1]/5 text-[#4169E1] flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform">
+                            <i data-lucide="activity" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-[#4169E1] block mb-0.5 md:mb-1">Tier 1</span>
+                        <h4 class="font-bold text-slate-800 text-xs mb-1">Follow-Up</h4>
+                        <span class="text-[8px] md:text-[9px] bg-[#4169E1]/5 text-[#4169E1] px-2 py-0.5 rounded-full font-semibold">Weekly Cycle</span>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="text-slate-300 z-10 my-1 lg:my-0">
+                        <i data-lucide="chevron-down" class="w-4 h-4 lg:hidden"></i>
+                        <i data-lucide="chevron-right" class="w-4 h-4 hidden lg:block"></i>
+                    </div>
+
+                    <!-- Stage 3: Sprint Technical Discussion (Slate/Steel Blue) -->
+                    <div onclick="selectTier('sprint')" id="node-sprint" class="z-10 cursor-pointer w-full lg:w-[18%] bg-white border border-slate-200 hover:border-[#4682B4] rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group">
+                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4682B4]/5 text-[#4682B4] flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform">
+                            <i data-lucide="refresh-cw" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-[#4682B4] block mb-0.5 md:mb-1">Sprint</span>
+                        <h4 class="font-bold text-slate-800 text-xs mb-1">Tech Discussion</h4>
+                        <span class="text-[8px] md:text-[9px] bg-[#4682B4]/5 text-[#4682B4] px-2 py-0.5 rounded-full font-semibold">Weekly Cycle</span>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="text-slate-300 z-10 my-1 lg:my-0">
+                        <i data-lucide="chevron-down" class="w-4 h-4 lg:hidden"></i>
+                        <i data-lucide="chevron-right" class="w-4 h-4 hidden lg:block"></i>
+                    </div>
+
+                    <!-- Stage 4: Tier 3 Decision Making (Navy Blue) -->
+                    <div onclick="selectTier('tier3_decision')" id="node-tier3_decision" class="z-10 cursor-pointer w-full lg:w-[18%] bg-white border border-slate-200 hover:border-[#002060] rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group">
+                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#002060]/5 text-[#002060] flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform">
+                            <i data-lucide="gavel" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-[#002060] block mb-0.5 md:mb-1">Tier 3</span>
+                        <h4 class="font-bold text-slate-800 text-xs mb-1">Decision Making</h4>
+                        <span class="text-[8px] md:text-[9px] bg-[#002060]/5 text-[#002060] px-2 py-0.5 rounded-full font-semibold">Weekly Cycle</span>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="text-slate-300 z-10 my-1 lg:my-0">
+                        <i data-lucide="chevron-down" class="w-4 h-4 lg:hidden"></i>
+                        <i data-lucide="chevron-right" class="w-4 h-4 hidden lg:block"></i>
+                    </div>
+
+                    <!-- Stage 5: Tier 3 Indicators (Deep Indigo-Navy) -->
+                    <div onclick="selectTier('tier3_indicators')" id="node-tier3_indicators" class="z-10 cursor-pointer w-full lg:w-[18%] bg-white border border-slate-200 hover:border-[#1E3A8A] rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group">
+                        <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1E3A8A]/5 text-[#1E3A8A] flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform">
+                            <i data-lucide="trending-up" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        </div>
+                        <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-[#1E3A8A] block mb-0.5 md:mb-1">Tier 3</span>
+                        <h4 class="font-bold text-slate-800 text-xs mb-1">Indicators</h4>
+                        <span class="text-[8px] md:text-[9px] bg-[#1E3A8A]/5 text-[#1E3A8A] px-2 py-0.5 rounded-full font-semibold">Quarterly Cycle</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- DETAILS CARD PANEL -->
+        <div class="bg-white rounded-[24px] p-6 md:p-8 shadow-sm">
+            
+            <!-- Tier 2 Planning Detail -->
+            <div id="detail-tier2" class="detail-panel space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-[#008080]/5 text-[#008080] flex items-center justify-center">
+                            <i data-lucide="calendar-range" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#008080] uppercase tracking-wider">Tier 2 Cadence</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">Weekly Planning Meeting</h3>
+                        </div>
+                    </div>
+                    <span class="bg-[#008080]/5 text-[#008080] text-xs font-bold px-3 py-1.5 rounded-full border border-[#008080]/10 shrink-0 self-start sm:self-auto">Frequency: Weekly Cycle</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#008080] uppercase tracking-wider">Meeting Purpose</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Focuses on aligning capacity planning, locking the upcoming week's schedule, and proactively identifying and mitigating potential resource bottlenecks or project schedule conflicts.
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-2 border-l-4 border-[#008080]">
+                            <span class="text-xs font-bold text-[#008080] uppercase block">Key Discussion Topics:</span>
+                            <ul class="space-y-1.5 text-xs text-slate-600">
+                                <li class="flex gap-2"><span>•</span> <span>Capacity Tool review and resource allocation</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Schedule baseline updates and locking</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Risk management and mitigation planning</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#008080] uppercase tracking-wider">Participants & Roles</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#008080]/10 text-[#008080] flex items-center justify-center text-xs font-bold shrink-0">PM</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">PMO (Project Management Office)</strong>
+                                    <span class="text-slate-500 text-xs">Owns the capacity model, updates the master schedule, and highlights critical risks.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#008080]/10 text-[#008080] flex items-center justify-center text-xs font-bold shrink-0">LD</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Site Leadership</strong>
+                                    <span class="text-slate-500 text-xs">Validates resource availability, approves local plans, and commits to the locked timeline.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 1 Follow-Up Detail -->
+            <div id="detail-tier1" class="detail-panel hidden space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-[#4169E1]/5 text-[#4169E1] flex items-center justify-center">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#4169E1] uppercase tracking-wider">Tier 1 Cadence</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">Weekly Follow-Up Meeting</h3>
+                        </div>
+                    </div>
+                    <span class="bg-[#4169E1]/5 text-[#4169E1] text-xs font-bold px-3 py-1.5 rounded-full border border-[#4169E1]/10 shrink-0 self-start sm:self-auto">Frequency: Weekly Cycle</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#4169E1] uppercase tracking-wider">Meeting Purpose</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The core operational pulse. Designed to track weekly task execution, address immediate blockers, and ensure team alignment with the locked project schedules.
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-2 border-l-4 border-[#4169E1]">
+                            <span class="text-xs font-bold text-[#4169E1] uppercase block">Key Discussion Topics:</span>
+                            <ul class="space-y-1.5 text-xs text-slate-600">
+                                <li class="flex gap-2"><span>•</span> <span>Weekly MS Planner board updates</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Immediate roadblock identification and resolution</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Task prioritization and next steps alignment</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#4169E1] uppercase tracking-wider">Participants & Roles</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#4169E1]/10 text-[#4169E1] flex items-center justify-center text-xs font-bold shrink-0">LD</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Site Leadership</strong>
+                                    <span class="text-slate-500 text-xs">Provides operational guidance, unblocks tasks, and manages local team support.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#4169E1]/10 text-[#4169E1] flex items-center justify-center text-xs font-bold shrink-0">TM</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Core Team Members</strong>
+                                    <span class="text-slate-500 text-xs">Provide honest progress updates, flag dependencies, and execute daily tasks.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sprint Detail -->
+            <div id="detail-sprint" class="detail-panel hidden space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-[#4682B4]/5 text-[#4682B4] flex items-center justify-center">
+                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#4682B4] uppercase tracking-wider">Weekly Sprint Cycle</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">Sprint Technical Discussion</h3>
+                        </div>
+                    </div>
+                    <span class="bg-[#4682B4]/5 text-[#4682B4] text-xs font-bold px-3 py-1.5 rounded-full border border-[#4682B4]/10 shrink-0 self-start sm:self-auto">Frequency: Weekly Cycle</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#4682B4] uppercase tracking-wider">Meeting Purpose</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A dedicated, highly collaborative space for resolving deep technical issues, standardizing engineering/analytical practices, and unblocking complex deliverables.
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-2 border-l-4 border-[#4682B4]">
+                            <span class="text-xs font-bold text-[#4682B4] uppercase block">Key Discussion Topics:</span>
+                            <ul class="space-y-1.5 text-xs text-slate-600">
+                                <li class="flex gap-2"><span>•</span> <span>Deep-dive into technical issues and blockers</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Documentation, lab method, or standard review</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Knowledge sharing and peer-to-peer support</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#4682B4] uppercase tracking-wider">Participants & Roles</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#4682B4]/10 text-[#4682B4] flex items-center justify-center text-xs font-bold shrink-0">TA</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Technical Leads & Experts</strong>
+                                    <span class="text-slate-500 text-xs">Lead the technical troubleshooting, enforce standards, and share best practices.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#4682B4]/10 text-[#4682B4] flex items-center justify-center text-xs font-bold shrink-0">TM</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Core Team Members</strong>
+                                    <span class="text-slate-500 text-xs">Collaborate on solutions, review peers' work, and implement standard practices.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3 Decision Making Detail -->
+            <div id="detail-tier3_decision" class="detail-panel hidden space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-[#002060]/5 text-[#002060] flex items-center justify-center">
+                            <i data-lucide="gavel" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#002060] uppercase tracking-wider">Tier 3 Cadence</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">Weekly Decision Making</h3>
+                        </div>
+                    </div>
+                    <span class="bg-[#002060]/5 text-[#002060] text-xs font-bold px-3 py-1.5 rounded-full border border-[#002060]/10 shrink-0 self-start sm:self-auto">Frequency: Weekly Cycle</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#002060] uppercase tracking-wider">Meeting Purpose</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The executive decision-making engine. Focuses on resolving escalated issues from Tier 1 and Tier 2, reviewing high-impact demands, and approving critical timeline adjustments.
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-2 border-l-4 border-[#002060]">
+                            <span class="text-xs font-bold text-[#002060] uppercase block">Key Discussion Topics:</span>
+                            <ul class="space-y-1.5 text-xs text-slate-600">
+                                <li class="flex gap-2"><span>•</span> <span>Critical delay approvals and postponement reviews</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>High-impact project prioritization and resource conflicts</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Escalated operational blocker resolution</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#002060] uppercase tracking-wider">Participants & Roles</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#002060]/10 text-[#002060] flex items-center justify-center text-xs font-bold shrink-0">LD</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Executive Leadership</strong>
+                                    <span class="text-slate-500 text-xs">Reviews escalations, holds final decision-making authority, and approves schedule changes.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#002060]/10 text-[#002060] flex items-center justify-center text-xs font-bold shrink-0">PM</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">PMO (Project Management Office)</strong>
+                                    <span class="text-slate-500 text-xs">Presents data-driven impact assessments and ensures decisions are documented.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3 Indicators Detail (Quarterly) -->
+            <div id="detail-tier3_indicators" class="detail-panel hidden space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-[#1E3A8A]/5 text-[#1E3A8A] flex items-center justify-center">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase tracking-wider">Tier 3 Strategic Loop</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">Quarterly Indicators & Strategy</h3>
+                        </div>
+                    </div>
+                    <span class="bg-[#1E3A8A]/5 text-[#1E3A8A] text-xs font-bold px-3 py-1.5 rounded-full border border-[#1E3A8A]/10 shrink-0 self-start sm:self-auto">Frequency: Quarterly Cycle (Every 3 Months)</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#1E3A8A] uppercase tracking-wider">Meeting Purpose</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A strategic review session held every quarter. It is dedicated to evaluating global indicators, assessing overall program performance, and identifying systemic opportunities for continuous process improvement.
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-2 border-l-4 border-[#1E3A8A]">
+                            <span class="text-xs font-bold text-[#1E3A8A] uppercase block">Strategic Focus Areas:</span>
+                            <ul class="space-y-1.5 text-xs text-slate-600">
+                                <li class="flex gap-2"><span>•</span> <span>Quarterly KPI performance and trend analysis</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Global resource capacity vs. pipeline forecast</span></li>
+                                <li class="flex gap-2"><span>•</span> <span>Continuous improvement initiative prioritization and strategic planning</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-bold text-[#1E3A8A] uppercase tracking-wider">Participants & Roles</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] flex items-center justify-center text-xs font-bold shrink-0">EL</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Executive & Site Leadership</strong>
+                                    <span class="text-slate-500 text-xs">Review performance against strategic goals, align resources, and set the next quarter's focus.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-slate-50/50 rounded-xl">
+                                <div class="w-8 h-8 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] flex items-center justify-center text-xs font-bold shrink-0">GO</div>
+                                <div>
+                                    <strong class="text-slate-800 text-sm block">Governance & PMO Owners</strong>
+                                    <span class="text-slate-500 text-xs">Present consolidated global analytics, identify systemic bottlenecks, and propose improvements.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Initialize Lucide Icons & Interactive Script -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Color definitions for each node
+        const nodeStyles = {
+            tier2: {
+                color: '#008080',
+                bg: '#008080/5',
+                border: 'border-[#008080]'
+            },
+            tier1: {
+                color: '#4169E1',
+                bg: '#4169E1/5',
+                border: 'border-[#4169E1]'
+            },
+            sprint: {
+                color: '#4682B4',
+                bg: '#4682B4/5',
+                border: 'border-[#4682B4]'
+            },
+            tier3_decision: {
+                color: '#002060',
+                bg: '#002060/5',
+                border: 'border-[#002060]'
+            },
+            tier3_indicators: {
+                color: '#1E3A8A',
+                bg: '#1E3A8A/5',
+                border: 'border-[#1E3A8A]'
+            }
+        };
+
+        // TIER SELECTION LOGIC
+        function selectTier(tierId) {
+            // Hide all detail panels
+            document.querySelectorAll('.detail-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Show selected detail panel
+            document.getElementById(`detail-${tierId}`).classList.remove('hidden');
+
+            // Reset all diagram node styles to default
+            Object.keys(nodeStyles).forEach(id => {
+                const node = document.getElementById(`node-${id}`);
+                const style = nodeStyles[id];
+                node.className = `z-10 cursor-pointer w-full lg:w-[18%] bg-white border border-slate-200 hover:border-[${style.color}] rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group`;
+            });
+            
+            // Apply active-node class, zoom, and thick custom border to selected node
+            const selectedNode = document.getElementById(`node-${tierId}`);
+            const activeStyle = nodeStyles[tierId];
+            selectedNode.className = `active-node z-10 cursor-pointer w-full lg:w-[18%] bg-white border-2 ${activeStyle.border} rounded-xl p-3 md:p-4 shadow-sm transition-all duration-200 text-center group scale-105`;
+        }
+    </script>
+</body>
+</html>
