@@ -6,40 +6,72 @@
 
 body {
   font-family: Segoe UI;
+  background: #f5f5f5;
   margin: 0;
-  padding: 20px;
-  background: transparent;
+  padding: 30px;
 }
 
-.container {
+/* Container */
+.flow {
   display: flex;
-  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.card {
-  flex: 1;
+/* Blocos */
+.step {
+  position: relative;
+  width: 180px;
   padding: 20px;
-  color: white;
+  background: white;
   border-radius: 12px;
+  border: 2px solid #0078d4;
+  text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.3s;
 }
 
-.card:hover {
+.step:hover {
+  background: #0078d4;
+  color: white;
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.blue { background: #0078d4; }
-.green { background: #107c10; }
-.red { background: #d13438; }
+/* Tooltip */
+.step::after {
+  content: "Adicione aqui seu texto";
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #323130;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
 
-#detail {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  background: #f3f2f1;
-  display: none;
+/* Mostrar tooltip */
+.step:hover::after {
+  opacity: 1;
+}
+
+/* Linha */
+.line {
+  height: 3px;
+  background: #ccc;
+  flex-grow: 1;
+}
+
+/* Título */
+h2 {
+  margin-bottom: 30px;
 }
 
 </style>
@@ -47,36 +79,33 @@ body {
 
 <body>
 
-<h2>Dashboard de Projetos</h2>
+<h2>Governance Operating Model</h2>
 
-<div class="container">
+<div class="flow">
 
-  <div class="card blue" onclick="showDetail('Projetos Ativos', 24)">
-    <h3>Projetos Ativos</h3>
-    <h1>24</h1>
-  </div>
+  <div class="step" onclick="openLink()">Kick-off Meeting</div>
 
-  <div class="card green" onclick="showDetail('Concluídos', 18)">
-    <h3>Concluídos</h3>
-    <h1>18</h1>
-  </div>
+  <div class="line"></div>
 
-  <div class="card red" onclick="showDetail('Atrasados', 6)">
-    <h3>Atrasados</h3>
-    <h1>6</h1>
-  </div>
+  <div class="step" onclick="openLink()">Planning Approved</div>
+
+  <div class="line"></div>
+
+  <div class="step" onclick="openLink()">Project Tasks</div>
+
+  <div class="line"></div>
+
+  <div class="step" onclick="openLink()">Timeline Updated</div>
+
+  <div class="line"></div>
+
+  <div class="step" onclick="openLink()">Decision Making</div>
 
 </div>
 
-<div id="detail"></div>
-
 <script>
-function showDetail(label, value) {
-  var el = document.getElementById("detail");
-  el.style.display = "block";
-  el.innerHTML =
-    "<strong>Categoria:</strong> " + label + "<br>" +
-    "<strong>Quantidade:</strong> " + value;
+function openLink() {
+  window.open("https://abbott.sharepoint.com/sites/BR-EPD-GOVERNANCE", "_blank");
 }
 </script>
 
