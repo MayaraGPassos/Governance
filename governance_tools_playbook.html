@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance Tools Playbook</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: transparent; /* Seamless embedding in SharePoint */
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-justify {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    </style>
+</head>
+<body class="p-2 md:p-4">
+
+    <!-- MAIN CONTAINER (Removed border border-slate-100 for a borderless, seamless blend with SharePoint) -->
+    <div class="max-w-6xl mx-auto bg-white rounded-[24px] p-6 md:p-10 shadow-sm space-y-8">
+        
+        <!-- HEADER SECTION -->
+        <div class="space-y-3">
+            <span class="inline-block bg-[#E8EFFF] text-[#002060] text-[10px] md:text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">
+                Interactive Guide
+            </span>
+            <h1 class="text-2xl md:text-4xl font-extrabold text-[#002060] tracking-tight">
+                Governance Tools Playbook
+            </h1>
+            <p class="text-slate-600 text-xs md:text-sm leading-relaxed text-justify max-w-5xl">
+                Select a tool below to explore the step-by-step implementation guide, including configurations, user responsibilities, and data synchronization workflows.
+            </p>
+        </div>
+
+        <!-- TABS NAVIGATION -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <!-- Tab 1: M365 Access -->
+            <button onclick="switchTab('m365')" id="tab-m365" class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 p-4 rounded-xl border-2 border-[#002060] bg-white text-[#002060] font-bold text-xs md:text-sm transition-all duration-200 shadow-sm group">
+                <i data-lucide="shield-check" class="w-4 h-4 md:w-5 md:h-5 shrink-0 group-hover:scale-110 transition-transform"></i>
+                <span class="text-center md:text-left">1. M365 Access</span>
+            </button>
+
+            <!-- Tab 2: MS Planner -->
+            <button onclick="switchTab('planner')" id="tab-planner" class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 p-4 rounded-xl border border-slate-200 bg-white text-slate-600 font-semibold text-xs md:text-sm hover:border-[#002060] hover:text-[#002060] transition-all duration-200 shadow-sm group">
+                <i data-lucide="layout-grid" class="w-4 h-4 md:w-5 md:h-5 shrink-0 group-hover:scale-110 transition-transform"></i>
+                <span class="text-center md:text-left">2. MS Planner</span>
+            </button>
+
+            <!-- Tab 3: Work Log App -->
+            <button onclick="switchTab('worklog')" id="tab-worklog" class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 p-4 rounded-xl border border-slate-200 bg-white text-slate-600 font-semibold text-xs md:text-sm hover:border-[#002060] hover:text-[#002060] transition-all duration-200 shadow-sm group">
+                <i data-lucide="clock" class="w-4 h-4 md:w-5 md:h-5 shrink-0 group-hover:scale-110 transition-transform"></i>
+                <span class="text-center md:text-left">3. Work Log App</span>
+            </button>
+
+            <!-- Tab 4: Power BI -->
+            <button onclick="switchTab('powerbi')" id="tab-powerbi" class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 p-4 rounded-xl border border-slate-200 bg-white text-slate-600 font-semibold text-xs md:text-sm hover:border-[#002060] hover:text-[#002060] transition-all duration-200 shadow-sm group">
+                <i data-lucide="bar-chart-3" class="w-4 h-4 md:w-5 md:h-5 shrink-0 group-hover:scale-110 transition-transform"></i>
+                <span class="text-center md:text-left">4. Power BI</span>
+            </button>
+        </div>
+
+        <!-- CONTENT PANEL CONTAINER -->
+        <div class="bg-slate-50/50 border border-slate-100 rounded-[20px] p-6 md:p-8">
+            
+            <!-- PANEL 1: M365 ACCESS -->
+            <div id="panel-m365" class="tab-panel space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-200/60 pb-4">
+                    <div class="w-10 h-10 rounded-lg bg-[#002060]/5 text-[#002060] flex items-center justify-center">
+                        <i data-lucide="key-round" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-bold text-[#002060]">M365 Licensing & Access Setup</h3>
+                        <p class="text-slate-500 text-xs">Essential steps to authorize users and provision governance tools.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">License Verification:</strong> Verify that the user has a valid Microsoft 365 license (F3, E3, or E5) assigned in the Admin Center.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Access Request Form:</strong> Open the "M365 Resource Request" form, enter user details, and select the required applications (Planner, Teams, SharePoint).
+                            </div>
+                        </li>
+                    </div>
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Manager Approval:</strong> Submit the form. The system routes the request to the direct manager for formal approval before licensing is active.
+                            </div>
+                        </li>
+                        <div class="bg-[#E8EFFF]/30 border border-[#002060]/10 rounded-xl p-4 space-y-2">
+                            <span class="text-xs font-bold text-[#002060] uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="info" class="w-3.5 h-3.5"></i> Critical Success Factor
+                            </span>
+                            <p class="text-xs text-slate-600 leading-relaxed text-justify">
+                                Ensure the user's M365 email matches their Active Directory profile exactly to prevent automated synchronization failures across Teams and MS Planner.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 2: MS PLANNER -->
+            <div id="panel-planner" class="tab-panel hidden space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-200/60 pb-4">
+                    <div class="w-10 h-10 rounded-lg bg-[#002060]/5 text-[#002060] flex items-center justify-center">
+                        <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-bold text-[#002060]">MS Planner Project Standardization</h3>
+                        <p class="text-slate-500 text-xs">Guidelines for structuring buckets, tasks, and team tracking.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Standard Bucket Creation:</strong> Build buckets corresponding to standard project phases (e.g., Initiation, Planning, Execution, Review, Closeout).
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Task Assignment Rules:</strong> Every task must have a single assigned owner, clear start/end dates, and a defined list of deliverables in the checklist.
+                            </div>
+                        </li>
+                    </div>
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Teams Integration:</strong> Link the Planner board directly to the dedicated MS Teams channel tab to facilitate quick access and real-time collaboration.
+                            </div>
+                        </li>
+                        <div class="bg-[#E8EFFF]/30 border border-[#002060]/10 rounded-xl p-4 space-y-2">
+                            <span class="text-xs font-bold text-[#002060] uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="info" class="w-3.5 h-3.5"></i> Critical Success Factor
+                            </span>
+                            <p class="text-xs text-slate-600 leading-relaxed text-justify">
+                                Do not create ad-hoc buckets outside the standard framework. Standard bucket naming is required for Power BI to compile global performance metrics accurately.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 3: WORK LOG APP -->
+            <div id="panel-worklog" class="tab-panel hidden space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-200/60 pb-4">
+                    <div class="w-10 h-10 rounded-lg bg-[#002060]/5 text-[#002060] flex items-center justify-center">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-bold text-[#002060]">Work Log Application Best Practices</h3>
+                        <p class="text-slate-500 text-xs">10 essential steps for logging time, tracking capacity, and managing workload.</p>
+                    </div>
+                </div>
+
+                <!-- 2 Columns Grid of 5 items each -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Daily Log Discipline:</strong> Team members must log their hours daily in the Work Log App to prevent retrospective estimation errors.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Task-to-Project Association:</strong> Every logged hour must be linked to a specific, active project ID and task category.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Non-Project Activity Logging:</strong> Log administrative tasks, training, and meetings under designated "Indirect Time" categories.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">4</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Standard Workday Capacity:</strong> Log exactly 8 hours per standard workday (or actual overtime hours if pre-approved by the leader).
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">5</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Weekly Submission Deadline:</strong> Submit all weekly logs by Friday at 5:00 PM local time to allow weekend data processing.
+                            </div>
+                        </li>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">6</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Manager Review & Approval:</strong> Leaders must review and approve team logs by Monday at 12:00 PM to lock the week's data.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">7</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Log Rejection Workflow:</strong> If a log is rejected, the leader must provide comments and the user must resubmit within 24 hours.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">8</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Real-Time Capacity Check:</strong> Use the App's dashboard to monitor your personal capacity vs. allocated project hours.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">9</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Historical Data Auditing:</strong> The PMO will audit historical logs monthly to refine future project capacity planning models.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">10</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Absence and Leave Tracking:</strong> Log planned vacation, sick leave, or national holidays in advance to maintain accurate capacity forecasts.
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 4: POWER BI -->
+            <div id="panel-powerbi" class="tab-panel hidden space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-200/60 pb-4">
+                    <div class="w-10 h-10 rounded-lg bg-[#002060]/5 text-[#002060] flex items-center justify-center">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-bold text-[#002060]">Power BI Analytics & Reporting</h3>
+                        <p class="text-slate-500 text-xs">10 key steps to analyze data, track performance, and leverage dashboards.</p>
+                    </div>
+                </div>
+
+                <!-- 2 Columns Grid of 5 items each -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Automated Data Refresh:</strong> Power BI dashboards refresh automatically twice a day (at 8:00 AM and 6:00 PM local time).
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Access and Workspaces:</strong> Access reports via the official "Governance Workspace" on the Power BI cloud service.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Project Progress View:</strong> Use the "Timeline Tracking" tab to compare baseline schedules against actual task completion.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">4</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Capacity and Overload Alert:</strong> Review the "Resource Workload" visual to identify overallocated teams and potential bottlenecks.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">5</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Filter and Drill-Down:</strong> Apply filters by Site, Department, Project Manager, or specific dates to isolate localized performance.
+                            </div>
+                        </li>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="space-y-4">
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">6</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Weekly Metric Review:</strong> Leaders must consult the "Tier 1/Tier 2 Operational Dashboard" prior to the weekly meetings.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">7</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Exporting Reports:</strong> Export visual data to Excel or PowerPoint for local presentations or stakeholder alignment.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">8</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Data Discrepancy Flagging:</strong> Report any visual data errors to the PMO immediately via the "Data Issue" button.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">9</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">Custom Alert Subscription:</strong> Set up personal email alerts for critical schedule changes or capacity overloads.
+                            </div>
+                        </li>
+                        <li class="group flex items-start gap-4 p-4 bg-white border border-slate-100 rounded-xl hover:bg-[#002060]/5 transition-all duration-200 transform hover:translate-x-2 cursor-pointer shadow-sm">
+                            <span class="w-6 h-6 rounded-full bg-[#002060] text-white flex items-center justify-center text-xs font-bold shrink-0">10</span>
+                            <div class="text-justify text-xs md:text-sm text-slate-600 leading-relaxed">
+                                <strong class="text-slate-800 font-bold transition-colors duration-200 group-hover:text-[#002060] block mb-1">KPI Baseline Audits:</strong> Use the "Historical KPI" tab to track long-term trends and validate the 79% lead time reduction.
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Interactive Tabs Script -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // TAB SWITCHING LOGIC
+        function switchTab(tabId) {
+            // Hide all panels
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Show selected panel
+            document.getElementById(`panel-${tabId}`).classList.remove('hidden');
+
+            // Reset all tab button styles to inactive
+            const tabIds = ['m365', 'planner', 'worklog', 'powerbi'];
+            tabIds.forEach(id => {
+                const tab = document.getElementById(`tab-${id}`);
+                tab.className = "flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 p-4 rounded-xl border border-slate-200 bg-white text-slate-600 font-semibold text-xs md:text-sm hover:border-[#002060] hover:text-[#002060] transition-all duration-200 shadow-sm group";
+            });
+
+            // Set active tab style
+            const activeTab = document.getElementById(`tab-${tabId}`);
+            activeTab.className = "flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 p-4 rounded-xl border-2 border-[#002060] bg-white text-[#002060] font-bold text-xs md:text-sm transition-all duration-200 shadow-sm group";
+        }
+    </script>
+</body>
+</html>
