@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Governance Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Swimlane flowchart custom styling */
+        .swimlane-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- HEADER -->
+    <header class="bg-[#003B46] text-white py-8 px-6 shadow-md border-b-4 border-[#07575B]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="bg-[#07575B] text-[#66A5AD] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Governance Transformation</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">GOVERNANCE HUB</h1>
+                <p class="text-slate-300 mt-2 text-sm md:text-base max-w-2xl">
+                    Standardizing processes, maximizing capacity, and empowering data-driven decisions globally.
+                </p>
+            </div>
+            <div class="bg-[#07575B]/40 border border-[#07575B] p-4 rounded-lg md:text-right min-w-[240px]">
+                <span class="text-xs text-[#66A5AD] uppercase font-bold tracking-wider block mb-1">Program Status</span>
+                <span class="text-lg font-bold block text-white">Global Implementation Phase</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 overflow-x-auto">
+            <div class="flex space-x-1 py-3 min-w-max">
+                <button onclick="switchTab('vision')" id="tab-vision" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 bg-[#003B46] text-white">
+                    <i data-lucide="eye" class="w-4 h-4"></i> Vision & Storytelling
+                </button>
+                <button onclick="switchTab('roadmap')" id="tab-roadmap" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> 4-Day Implementation
+                </button>
+                <button onclick="switchTab('playbook')" id="tab-playbook" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="book-open" class="w-4 h-4"></i> Tools Playbook
+                </button>
+                <button onclick="switchTab('meetings')" id="tab-meetings" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="users" class="w-4 h-4"></i> Meeting Routine
+                </button>
+                <button onclick="switchTab('flowchart')" id="tab-flowchart" class="tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="git-branch" class="w-4 h-4"></i> Interactive Flowchart
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- ================= SECTION: VISION & STORYTELLING ================= -->
+        <section id="content-vision" class="tab-content space-y-8">
+            
+            <!-- Why Change is Necessary -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100">
+                <span class="text-xs font-bold text-[#07575B] uppercase tracking-wider block mb-2">The Transformation Journey</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#003B46] mb-4">Why Governance Transformation is Necessary</h2>
+                <p class="text-slate-600 leading-relaxed max-w-4xl mb-8">
+                    In a rapidly evolving global R&D landscape, efficiency and agility are no longer options—they are survival requirements. Our transformation initiative is designed to address systemic operational challenges, replace fragmented practices with unified standards, and build a culture of high performance.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Current Challenges -->
+                    <div class="border border-rose-100 bg-rose-50/30 p-6 rounded-xl">
+                        <div class="flex items-center gap-3 text-rose-700 font-bold mb-4">
+                            <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                            <h3 class="font-display text-lg">Current Challenges</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="text-rose-500 font-bold">•</span>
+                                <p class="text-slate-600 text-sm"><strong class="text-slate-800">Lack of Visibility:</strong> Fragmented project schedules make it impossible to track progress in real-time across centers.</p>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-rose-500 font-bold">•</span>
+                                <p class="text-slate-600 text-sm"><strong class="text-slate-800">Unpredictability:</strong> Delays are detected too late, preventing timely escalation and proactive risk mitigation.</p>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-rose-500 font-bold">•</span>
+                                <p class="text-slate-600 text-sm"><strong class="text-slate-800">Capacity Constraints:</strong> No clear visibility into team workload, leading to overallocation or hidden bottlenecks.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Future State Vision -->
+                    <div class="border border-emerald-100 bg-emerald-50/30 p-6 rounded-xl">
+                        <div class="flex items-center gap-3 text-emerald-700 font-bold mb-4">
+                            <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            <h3 class="font-display text-lg">Future State Vision</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="text-emerald-500 font-bold">•</span>
+                                <p class="text-slate-600 text-sm"><strong class="text-slate-800">Unified Standards:</strong> One single source of truth for all projects, tasks, and timelines globally.</p>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-emerald-500 font-bold">•</span>
+                                <p class="text-slate-600 text-sm"><strong class="text-slate-800">High Predictability:</strong> Standardized escalation triggers (Tiers) and automated delay evaluation.</p>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-emerald-500 font-bold">•</span>
+                                <p class="text-slate-600 text-sm"><strong class="text-slate-800">Optimized Capacity:</strong> Real-time workload tracking (Work Log) supporting strategic decision-making.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proven Success Pilot Case -->
+            <div class="bg-gradient-to-br from-[#003B46] to-[#07575B] text-white p-8 rounded-xl shadow-md">
+                <span class="text-xs font-bold text-[#66A5AD] uppercase tracking-wider block mb-2">Proven Success Case</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Benchmark Results: The Power of Structured Governance</h2>
+                <p class="text-slate-200 mb-8 max-w-3xl leading-relaxed">
+                    Our pilot implementation demonstrated that standardized governance processes combined with modern tracking tools yield immediate, massive business value. These results serve as our global standard blueprint.
+                </p>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- KPI 1 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                        <span class="text-[#66A5AD] text-xs font-bold uppercase block mb-1">Lead Time Reduction</span>
+                        <span class="text-4xl font-extrabold block text-white mb-2">-79%</span>
+                        <p class="text-slate-300 text-xs leading-relaxed">Analysis lead time dropped from 14 days to just 3 days on average.</p>
+                    </div>
+                    <!-- KPI 2 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                        <span class="text-[#66A5AD] text-xs font-bold uppercase block mb-1">Industrial Output</span>
+                        <span class="text-4xl font-extrabold block text-white mb-2">8x</span>
+                        <p class="text-slate-300 text-xs leading-relaxed">Increase in industrial batch production through optimized scheduling.</p>
+                    </div>
+                    <!-- KPI 3 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                        <span class="text-[#66A5AD] text-xs font-bold uppercase block mb-1">Capacity Visibility</span>
+                        <span class="text-4xl font-extrabold block text-white mb-2">100%</span>
+                        <p class="text-slate-300 text-xs leading-relaxed">Full real-time visibility into analyst workload and resource bottlenecks.</p>
+                    </div>
+                    <!-- KPI 4 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                        <span class="text-[#66A5AD] text-xs font-bold uppercase block mb-1">Task Adherence</span>
+                        <span class="text-4xl font-extrabold block text-white mb-2">95%+</span>
+                        <p class="text-slate-300 text-xs leading-relaxed">High fidelity to planned project schedules and milestone delivery.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Program Scope -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100">
+                <h2 class="text-2xl font-bold text-[#003B46] mb-6 text-center">Global Standardization Scope</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 border border-slate-100 bg-slate-50/50 rounded-xl">
+                        <div class="w-12 h-12 bg-[#003B46]/10 text-[#003B46] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">1. Core Framework</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Unifying project management, technical documentation, lab efficiency, and analytics into one global operating standard.
+                        </p>
+                    </div>
+                    <div class="p-6 border border-slate-100 bg-slate-50/50 rounded-xl">
+                        <div class="w-12 h-12 bg-[#003B46]/10 text-[#003B46] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="globe-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">2. Global Alignment</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ensuring all global centers operate on the same source of truth while maintaining local operational agility.
+                        </p>
+                    </div>
+                    <div class="p-6 border border-slate-100 bg-slate-50/50 rounded-xl">
+                        <div class="w-12 h-12 bg-[#003B46]/10 text-[#003B46] rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2">3. Quality Gates</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Establishing rigorous quality check gates at every phase transition to guarantee global compliance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: 4-DAY IMPLEMENTATION ================= -->
+        <section id="content-roadmap" class="tab-content hidden space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100">
+                <span class="text-xs font-bold text-[#07575B] uppercase tracking-wider block mb-2">Execution Roadmap</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#003B46] mb-4">Our Week: 4-Day Implementation Agenda</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl mb-8">
+                    A highly structured, hands-on, four-day onsite sprint designed to configure tools, train local teams, and establish the governance routine.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Day 1 -->
+                    <div class="border border-slate-100 bg-slate-50/50 rounded-xl overflow-hidden shadow-sm flex flex-col">
+                        <div class="bg-[#003B46] text-white p-4 flex justify-between items-center">
+                            <span class="font-bold tracking-wide">DAY 01</span>
+                            <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-semibold">4.0 Hours</span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-3">Foundation & Goals</h3>
+                                <ul class="space-y-2 text-slate-600 text-xs mb-6">
+                                    <li class="flex gap-2"><span>•</span> <span>Align purpose and vision (15m)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Define week goals & scope (15m)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Assess site current status (30m)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Map local operational indicators (3.0h)</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 pt-4 mt-auto">
+                                <span class="text-[10px] uppercase font-bold text-[#07575B] block mb-1">Pre-Work Required</span>
+                                <p class="text-slate-500 text-[11px] leading-relaxed">Preparation and presentation of current local indicators.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="border border-slate-100 bg-slate-50/50 rounded-xl overflow-hidden shadow-sm flex flex-col">
+                        <div class="bg-[#07575B] text-white p-4 flex justify-between items-center">
+                            <span class="font-bold tracking-wide">DAY 02</span>
+                            <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-semibold">4.5 Hours</span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-3">Planning & Capacity</h3>
+                                <ul class="space-y-2 text-slate-600 text-xs mb-6">
+                                    <li class="flex gap-2"><span>•</span> <span>Review project schedules (1.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Map postponements & offenders (30m)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Configure capacity planning tool (2.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Connect Power BI evaluation (1.0h)</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 pt-4 mt-auto">
+                                <span class="text-[10px] uppercase font-bold text-[#07575B] block mb-1">Pre-Work Required</span>
+                                <p class="text-slate-500 text-[11px] leading-relaxed">Establish start/finish dates for each phase of current active projects.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="border border-slate-100 bg-slate-50/50 rounded-xl overflow-hidden shadow-sm flex flex-col">
+                        <div class="bg-[#003B46] text-white p-4 flex justify-between items-center">
+                            <span class="font-bold tracking-wide">DAY 03</span>
+                            <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-semibold">4.0 Hours</span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-3">Execution & Review</h3>
+                                <ul class="space-y-2 text-slate-600 text-xs mb-6">
+                                    <li class="flex gap-2"><span>•</span> <span>Standardize review processes (1.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Configure review Power BI dashboard (30m)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Conduct reviewer training sessions (1.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Standardize pilot processes (1.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Review pilot analytics (30m)</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 pt-4 mt-auto">
+                                <span class="text-[10px] uppercase font-bold text-[#07575B] block mb-1">Pre-Work Required</span>
+                                <p class="text-slate-500 text-[11px] leading-relaxed">Present current review and local pilot processes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="border border-slate-100 bg-slate-50/50 rounded-xl overflow-hidden shadow-sm flex flex-col">
+                        <div class="bg-[#07575B] text-white p-4 flex justify-between items-center">
+                            <span class="font-bold tracking-wide">DAY 04</span>
+                            <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-semibold">5.5 Hours</span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-3">Finalization & Training</h3>
+                                <ul class="space-y-2 text-slate-600 text-xs mb-6">
+                                    <li class="flex gap-2"><span>•</span> <span>Deploy analytical Power BI (1.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Conduct resource evaluation (30m)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>End-user system training (1.0h)</span></li>
+                                    <li class="flex gap-2"><span>•</span> <span>Provide migration support (3.0h)</span></li>
+                                </ul>
+                            </div>
+                            <div class="border-t border-slate-200 pt-4 mt-auto">
+                                <span class="text-[10px] uppercase font-bold text-[#07575B] block mb-1">Pre-Work Required</span>
+                                <p class="text-slate-500 text-[11px] leading-relaxed">None required. Dedicated to system migration and support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: TOOLS PLAYBOOK ================= -->
+        <section id="content-playbook" class="tab-content hidden space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100">
+                <span class="text-xs font-bold text-[#07575B] uppercase tracking-wider block mb-2">Interactive Guide</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#003B46] mb-4">Governance Tools Playbook</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl mb-8">
+                    Select a tool below to explore the step-by-step implementation guide, including screenshots and critical configurations.
+                </p>
+
+                <!-- Tool Selectors -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <button onclick="selectPlaybookTool('m365')" id="tool-btn-m365" class="tool-tab-btn p-4 rounded-xl border-2 border-[#003B46] bg-[#003B46]/5 text-[#003B46] font-bold text-sm transition-all duration-200 flex flex-col items-center gap-2">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                        <span>1. M365 Access</span>
+                    </button>
+                    <button onclick="selectPlaybookTool('planner')" id="tool-btn-planner" class="tool-tab-btn p-4 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm transition-all duration-200 flex flex-col items-center gap-2 hover:bg-slate-50">
+                        <i data-lucide="kanban-square" class="w-6 h-6"></i>
+                        <span>2. MS Planner</span>
+                    </button>
+                    <button onclick="selectPlaybookTool('worklog')" id="tool-btn-worklog" class="tool-tab-btn p-4 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm transition-all duration-200 flex flex-col items-center gap-2 hover:bg-slate-50">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                        <span>3. Work Log App</span>
+                    </button>
+                    <button onclick="selectPlaybookTool('pbi')" id="tool-btn-pbi" class="tool-tab-btn p-4 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm transition-all duration-200 flex flex-col items-center gap-2 hover:bg-slate-50">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        <span>4. Power BI</span>
+                    </button>
+                </div>
+
+                <!-- Playbook Content Panels -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/30">
+                    
+                    <!-- M365 Panel -->
+                    <div id="playbook-m365" class="playbook-panel p-6 md:p-8 space-y-6">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="lg:w-1/2 space-y-4">
+                                <h3 class="text-xl font-bold text-[#003B46] flex items-center gap-2">
+                                    <i data-lucide="key-round" class="w-5 h-5"></i> M365 Licensing & Access Setup
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Before using any governance tools, all team members must be assigned appropriate licenses and permissions. Follow these critical setup steps.
+                                </p>
+                                <div class="space-y-4 pt-2">
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#003B46] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">License Check:</strong> Verify that the user has a valid Microsoft 365 license (F3, E3, or E5) assigned in the Admin Center.</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#003B46] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Access Request Form:</strong> Open the "M365 Resource Request" form, enter user details, and select the required applications (Planner, Teams, SharePoint).</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#003B46] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Manager Approval:</strong> Submit the form. The system routes the request to the direct manager for formal approval before licensing is active.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 bg-white p-4 border border-slate-200 rounded-xl shadow-inner flex flex-col justify-center items-center min-h-[300px]">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Setup Screen Reference</span>
+                                <div class="w-full h-48 bg-slate-100 rounded-lg flex items-center justify-center border border-dashed border-slate-300">
+                                    <div class="text-center p-4">
+                                        <i data-lucide="image" class="w-12 h-12 text-slate-400 mx-auto mb-2"></i>
+                                        <span class="text-xs text-slate-500 font-medium block">M365 Resource Request Form Screenshot</span>
+                                        <span class="text-[10px] text-slate-400 block mt-1">Ref: Admin Portal Access Panel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MS Planner Panel -->
+                    <div id="playbook-planner" class="playbook-panel hidden p-6 md:p-8 space-y-6">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="lg:w-1/2 space-y-4">
+                                <h3 class="text-xl font-bold text-[#003B46] flex items-center gap-2">
+                                    <i data-lucide="kanban" class="w-5 h-5"></i> Microsoft Planner Task Management
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    MS Planner acts as our visual task management engine. Standardizing buckets and labels is key to ensuring cross-site data aggregation works seamlessly.
+                                </p>
+                                <div class="space-y-4 pt-2">
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#07575B] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Bucket Standardization:</strong> Organize boards into standardized buckets: Backlog, Planned, In Progress, Review, and Completed.</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#07575B] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Label Conventions:</strong> Use color-coded labels to indicate task types, critical dependencies, or risk levels (e.g., Red for Blocked, Yellow for At Risk).</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#07575B] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Task Assignment:</strong> Every task must have a single assigned owner, a clear start date, and a realistic due date aligned with the master schedule.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 bg-white p-4 border border-slate-200 rounded-xl shadow-inner flex flex-col justify-center items-center min-h-[300px]">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Planner Screen Reference</span>
+                                <div class="w-full h-48 bg-slate-100 rounded-lg flex items-center justify-center border border-dashed border-slate-300">
+                                    <div class="text-center p-4">
+                                        <i data-lucide="image" class="w-12 h-12 text-slate-400 mx-auto mb-2"></i>
+                                        <span class="text-xs text-slate-500 font-medium block">MS Planner Dashboard Screenshot</span>
+                                        <span class="text-[10px] text-slate-400 block mt-1">Ref: Global Planner Board Template</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Log Panel -->
+                    <div id="playbook-worklog" class="playbook-panel hidden p-6 md:p-8 space-y-6">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="lg:w-1/2 space-y-4">
+                                <h3 class="text-xl font-bold text-[#003B46] flex items-center gap-2">
+                                    <i data-lucide="clock-4" class="w-5 h-5"></i> Work Log App & Capacity Tracking
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    The Work Log App is used by analysts and team members to log actual hours worked against planned tasks, giving us real-time capacity insights.
+                                </p>
+                                <div class="space-y-4 pt-2">
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#003B46] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Daily Logging:</strong> Analysts must log hours daily. Select the project, the corresponding Planner task, and input the hours spent.</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#003B46] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Activity Classification:</strong> Classify hours correctly (e.g., Development, Review, Admin, Training) to ensure accurate capacity modeling.</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#003B46] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Validation & Submission:</strong> Submit logs at the end of each week. Leaders review and validate submissions before they feed into Power BI.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 bg-white p-4 border border-slate-200 rounded-xl shadow-inner flex flex-col justify-center items-center min-h-[300px]">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Work Log Screen Reference</span>
+                                <div class="w-full h-48 bg-slate-100 rounded-lg flex items-center justify-center border border-dashed border-slate-300">
+                                    <div class="text-center p-4">
+                                        <i data-lucide="image" class="w-12 h-12 text-slate-400 mx-auto mb-2"></i>
+                                        <span class="text-xs text-slate-500 font-medium block">Work Log PowerApp Interface Screenshot</span>
+                                        <span class="text-[10px] text-slate-400 block mt-1">Ref: Time Submission Portal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Power BI Panel -->
+                    <div id="playbook-pbi" class="playbook-panel hidden p-6 md:p-8 space-y-6">
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <div class="lg:w-1/2 space-y-4">
+                                <h3 class="text-xl font-bold text-[#003B46] flex items-center gap-2">
+                                    <i data-lucide="bar-chart-horizontal" class="w-5 h-5"></i> Power BI Dashboards & Analytics
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    Our Power BI dashboards pull data from Planner and Work Log, presenting unified, real-time performance and capacity metrics to leadership.
+                                </p>
+                                <div class="space-y-4 pt-2">
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#07575B] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Data Sync Frequency:</strong> Dashboards are set to auto-refresh 4 times daily, ensuring leadership has access to near-real-time metrics.</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#07575B] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Key Metrics Tracked:</strong> Monitor Schedule Variance, Analyst Allocation Rate, Task Lead Time, and Postponement Offenders.</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="w-6 h-6 rounded-full bg-[#07575B] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                                        <p class="text-slate-600 text-sm"><strong class="text-slate-800 block">Access Control:</strong> Dashboards are shared via workspace groups. Leadership and PMO have edit rights, while team members have read-only access.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 bg-white p-4 border border-slate-200 rounded-xl shadow-inner flex flex-col justify-center items-center min-h-[300px]">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Power BI Screen Reference</span>
+                                <div class="w-full h-48 bg-slate-100 rounded-lg flex items-center justify-center border border-dashed border-slate-300">
+                                    <div class="text-center p-4">
+                                        <i data-lucide="image" class="w-12 h-12 text-slate-400 mx-auto mb-2"></i>
+                                        <span class="text-xs text-slate-500 font-medium block">Power BI Capacity Dashboard Screenshot</span>
+                                        <span class="text-[10px] text-slate-400 block mt-1">Ref: Executive Analytics Suite</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: MEETING ROUTINE ================= -->
+        <section id="content-meetings" class="tab-content hidden space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100">
+                <span class="text-xs font-bold text-[#07575B] uppercase tracking-wider block mb-2">Operational Pulse</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#003B46] mb-4">Meeting Routine: Structured Alignment</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl mb-8">
+                    Our governance model operates on a structured cadence of Tiers. Click on any Tier below to explore its specific purpose, participants, and frequency.
+                </p>
+
+                <!-- Interactive Meeting Routine Diagram -->
+                <div class="relative bg-slate-50 border border-slate-200 p-8 rounded-xl overflow-hidden mb-8">
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
+                        
+                        <!-- Tier 2 -->
+                        <div onclick="selectMeetingTier('tier2')" id="diagram-tier2" class="tier-node cursor-pointer w-full lg:w-64 bg-emerald-600 text-white p-5 rounded-xl shadow-md border-2 border-emerald-500 hover:scale-105 transition-all duration-200 text-center">
+                            <span class="text-xs font-bold uppercase tracking-wider block mb-1 text-emerald-200">Tier 2 Planning</span>
+                            <span class="text-lg font-bold block mb-3">PMO + LEADERSHIP</span>
+                            <p class="text-xs text-emerald-100">Monthly Planning, Prioritization, and Risk Management.</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden lg:block text-slate-300">
+                            <i data-lucide="arrow-right" class="w-8 h-8"></i>
+                        </div>
+
+                        <!-- Tier 1 -->
+                        <div onclick="selectMeetingTier('tier1')" id="diagram-tier1" class="tier-node cursor-pointer w-full lg:w-64 bg-[#07575B] text-white p-5 rounded-xl shadow-md border-2 border-[#07575B] hover:scale-105 transition-all duration-200 text-center">
+                            <span class="text-xs font-bold uppercase tracking-wider block mb-1 text-[#66A5AD]">Tier 1 Follow-Up</span>
+                            <span class="text-lg font-bold block mb-3">LEADERSHIP + TEAM</span>
+                            <p class="text-xs text-slate-200">Weekly Demands, Risk Communication, and Support.</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="hidden lg:block text-slate-300">
+                            <i data-lucide="arrow-right" class="w-8 h-8"></i>
+                        </div>
+
+                        <!-- Tier 3 -->
+                        <div onclick="selectMeetingTier('tier3')" id="diagram-tier3" class="tier-node cursor-pointer w-full lg:w-64 bg-[#003B46] text-white p-5 rounded-xl shadow-md border-2 border-[#003B46] hover:scale-105 transition-all duration-200 text-center">
+                            <span class="text-xs font-bold uppercase tracking-wider block mb-1 text-[#66A5AD]">Tier 3 Decision</span>
+                            <span class="text-lg font-bold block mb-3">LEADERSHIP ONLY</span>
+                            <p class="text-xs text-slate-200">High-Impact Demands & Indicator Review.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Meeting Details Card -->
+                <div class="border border-slate-200 rounded-xl p-6 md:p-8 bg-slate-50/50">
+                    <div id="tier-detail-tier2" class="tier-detail-panel space-y-4">
+                        <div class="flex items-center gap-3 text-emerald-700 font-bold mb-2">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full uppercase">Tier 2</span>
+                            <h3 class="text-xl font-bold">Monthly Planning & Prioritization</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-4xl">
+                            The Tier 2 meeting aligns the PMO and site leadership on the upcoming month's capacity, project schedules, and high-level risk management.
+                        </p>
+                        <div class="grid sm:grid-cols-3 gap-6 pt-4 border-t border-slate-200">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Participants</span>
+                                <p class="text-slate-700 text-sm font-semibold">PMO & Site Leadership</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Frequency</span>
+                                <p class="text-slate-700 text-sm font-semibold">Monthly</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Key Deliverable</span>
+                                <p class="text-slate-700 text-sm font-semibold">Approved Monthly Plan & Capacity Lock</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tier-detail-tier1" class="tier-detail-panel hidden space-y-4">
+                        <div class="flex items-center gap-3 text-[#07575B] font-bold mb-2">
+                            <span class="bg-[#07575B]/10 text-[#07575B] text-xs px-2.5 py-1 rounded-full uppercase">Tier 1</span>
+                            <h3 class="text-xl font-bold">Weekly Follow-Up & Team Support</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-4xl">
+                            The Tier 1 meeting is the operational pulse. It brings leaders and team members together weekly to track immediate task updates, address blockers, and ensure timeline adherence.
+                        </p>
+                        <div class="grid sm:grid-cols-3 gap-6 pt-4 border-t border-slate-200">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Participants</span>
+                                <p class="text-slate-700 text-sm font-semibold">Site Leadership & Team Members</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Frequency</span>
+                                <p class="text-slate-700 text-sm font-semibold">Weekly</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Key Deliverable</span>
+                                <p class="text-slate-700 text-sm font-semibold">Weekly Task Updates & Blocker Log</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tier-detail-tier3" class="tier-detail-panel hidden space-y-4">
+                        <div class="flex items-center gap-3 text-[#003B46] font-bold mb-2">
+                            <span class="bg-[#003B46]/10 text-[#003B46] text-xs px-2.5 py-1 rounded-full uppercase">Tier 3</span>
+                            <h3 class="text-xl font-bold">Executive Decision Making</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed max-w-4xl">
+                            The Tier 3 meeting is reserved for executive leadership to review global indicators, make high-impact prioritization decisions, and resolve critical escalations from Tier 1 and 2.
+                        </p>
+                        <div class="grid sm:grid-cols-3 gap-6 pt-4 border-t border-slate-200">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Participants</span>
+                                <p class="text-slate-700 text-sm font-semibold">Executive Leadership Only</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Frequency</span>
+                                <p class="text-slate-700 text-sm font-semibold">Bi-Weekly / Monthly</p>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 uppercase block mb-1">Key Deliverable</span>
+                                <p class="text-slate-700 text-sm font-semibold">Strategic Decisions & Global Indicator Lock</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION: INTERACTIVE FLOWCHART ================= -->
+        <section id="content-flowchart" class="tab-content hidden space-y-8">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-100">
+                <span class="text-xs font-bold text-[#07575B] uppercase tracking-wider block mb-2">Process Map</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#003B46] mb-4">Governance Operating Model Flowchart</h2>
+                <p class="text-slate-600 leading-relaxed max-w-3xl mb-8">
+                    An interactive swimlane flowchart of our internal project management flow. Filter by lane or click on any step to inspect specific operational rules and details.
+                </p>
+
+                <!-- Flowchart Controls -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <button onclick="filterFlowchart('all')" id="flow-btn-all" class="flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-[#003B46] text-white transition-all">All Roles</button>
+                    <button onclick="filterFlowchart('pmo')" id="flow-btn-pmo" class="flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">PMO</button>
+                    <button onclick="filterFlowchart('gov')" id="flow-btn-gov" class="flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Governance Owner</button>
+                    <button onclick="filterFlowchart('ldr')" id="flow-btn-ldr" class="flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Leadership</button>
+                    <button onclick="filterFlowchart('tem')" id="flow-btn-tem" class="flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Team</button>
+                </div>
+
+                <!-- Swimlane Flowchart Grid -->
+                <div class="border border-slate-200 rounded-xl overflow-x-auto bg-slate-50/20">
+                    <div class="min-w-[1000px] p-6 space-y-4">
+                        
+                        <!-- Phase Labels -->
+                        <div class="grid grid-cols-12 gap-4 text-center border-b border-slate-200 pb-2 mb-4">
+                            <div class="col-span-2"></div>
+                            <div class="col-span-5 text-sm font-bold text-[#003B46] border-r border-slate-200 uppercase tracking-wider">Project Start Phase</div>
+                            <div class="col-span-5 text-sm font-bold text-[#07575B] uppercase tracking-wider">Project Execution Phase (Weekly)</div>
+                        </div>
+
+                        <!-- PMO Swimlane -->
+                        <div id="lane-pmo" class="swimlane-grid gap-4 items-center border-b border-slate-100 pb-4">
+                            <div class="bg-[#003B46]/10 text-[#003B46] font-bold text-xs p-3 rounded-lg text-center uppercase tracking-wider">PMO</div>
+                            <div class="grid grid-cols-10 gap-4">
+                                <div class="col-span-5 flex items-center gap-3">
+                                    <div onclick="showFlowDetail('eib')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#003B46] transition-all text-xs font-semibold w-40 text-center">
+                                        EIB BC Approved
+                                    </div>
+                                    <div class="text-slate-300"><i data-lucide="arrow-right" class="w-4 h-4"></i></div>
+                                    <div onclick="showFlowDetail('kickoff')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#003B46] transition-all text-xs font-semibold w-40 text-center">
+                                        Kick-Off Meeting
+                                    </div>
+                                </div>
+                                <div class="col-span-5 flex items-center gap-3 pl-4 border-l border-slate-200 border-dashed">
+                                    <div onclick="showFlowDetail('pmo_eval')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#003B46] transition-all text-xs font-semibold w-40 text-center">
+                                        PMO Evaluation (Tier 2)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Governance Owner Swimlane -->
+                        <div id="lane-gov" class="swimlane-grid gap-4 items-center border-b border-slate-100 pb-4">
+                            <div class="bg-[#07575B]/10 text-[#07575B] font-bold text-xs p-3 rounded-lg text-center uppercase tracking-wider">Gov. Owner</div>
+                            <div class="grid grid-cols-10 gap-4">
+                                <div class="col-span-5 flex items-center gap-3">
+                                    <div onclick="showFlowDetail('new_proj')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#07575B] transition-all text-xs font-semibold w-40 text-center">
+                                        New Project Start Flow
+                                    </div>
+                                    <div class="text-slate-300"><i data-lucide="arrow-right" class="w-4 h-4"></i></div>
+                                    <div onclick="showFlowDetail('std_timeline')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#07575B] transition-all text-xs font-semibold w-40 text-center">
+                                        Standard Timeline Update
+                                    </div>
+                                </div>
+                                <div class="col-span-5 flex items-center gap-3 pl-4 border-l border-slate-200 border-dashed">
+                                    <div onclick="showFlowDetail('status_rep')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-[#07575B] transition-all text-xs font-semibold w-40 text-center">
+                                        Monthly Status Report
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leadership Swimlane -->
+                        <div id="lane-ldr" class="swimlane-grid gap-4 items-center border-b border-slate-100 pb-4">
+                            <div class="bg-slate-100 text-slate-700 font-bold text-xs p-3 rounded-lg text-center uppercase tracking-wider">Leadership</div>
+                            <div class="grid grid-cols-10 gap-4">
+                                <div class="col-span-5 flex items-center gap-3">
+                                    <div onclick="showFlowDetail('scope_def')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-slate-400 transition-all text-xs font-semibold w-40 text-center">
+                                        Scope Definition
+                                    </div>
+                                    <div class="text-slate-300"><i data-lucide="arrow-right" class="w-4 h-4"></i></div>
+                                    <div onclick="showFlowDetail('timeline_val')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-slate-400 transition-all text-xs font-semibold w-40 text-center">
+                                        Timeline Validation
+                                    </div>
+                                </div>
+                                <div class="col-span-5 flex items-center gap-3 pl-4 border-l border-slate-200 border-dashed">
+                                    <div onclick="showFlowDetail('proj_tasks_ldr')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-slate-400 transition-all text-xs font-semibold w-40 text-center">
+                                        Project Tasks Follow-up
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Swimlane -->
+                        <div id="lane-tem" class="swimlane-grid gap-4 items-center">
+                            <div class="bg-slate-100 text-slate-700 font-bold text-xs p-3 rounded-lg text-center uppercase tracking-wider">Team</div>
+                            <div class="grid grid-cols-10 gap-4">
+                                <div class="col-span-5 flex items-center gap-3">
+                                    <div onclick="showFlowDetail('tasks_rec')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-slate-400 transition-all text-xs font-semibold w-40 text-center">
+                                        Project Tasks Received
+                                    </div>
+                                </div>
+                                <div class="col-span-5 flex items-center gap-3 pl-4 border-l border-slate-200 border-dashed">
+                                    <div onclick="showFlowDetail('tasks_upd')" class="flow-node cursor-pointer p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-slate-400 transition-all text-xs font-semibold w-40 text-center">
+                                        Project Tasks Updates
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Flowchart Detail Panel -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/50">
+                    <div id="flow-detail-default" class="flow-detail-panel">
+                        <p class="text-slate-500 text-sm text-center py-4">Click on any step in the flowchart above to inspect specific operational rules and role descriptions.</p>
+                    </div>
+
+                    <div id="flow-detail-eib" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-[#003B46] flex items-center gap-2">
+                            <span class="bg-[#003B46]/10 text-[#003B46] text-xs px-2.5 py-1 rounded-full uppercase">PMO Step</span>
+                            EIB BC Approved
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            This is the formal trigger for any new project in the R&D center. Once the business case is approved, the PMO initiates the governance onboarding.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-kickoff" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-[#003B46] flex items-center gap-2">
+                            <span class="bg-[#003B46]/10 text-[#003B46] text-xs px-2.5 py-1 rounded-full uppercase">PMO Step</span>
+                            Kick-Off Meeting
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The PMO aligns with the project leader and key stakeholders to establish the project baseline, defining critical milestones and deliverables.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-pmo_eval" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-[#003B46] flex items-center gap-2">
+                            <span class="bg-[#003B46]/10 text-[#003B46] text-xs px-2.5 py-1 rounded-full uppercase">PMO Step</span>
+                            PMO Evaluation (Tier 2)
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            During monthly Tier 2 meetings, the PMO evaluates the impact of any timeline changes or capacity constraints, triggering escalations if necessary.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-new_proj" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-[#07575B] flex items-center gap-2">
+                            <span class="bg-[#07575B]/10 text-[#07575B] text-xs px-2.5 py-1 rounded-full uppercase">Gov. Owner Step</span>
+                            New Project Start Flow
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The Governance Owner initiates the system flow by creating the standard project form, setting up the SharePoint repository and MS Planner board.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-std_timeline" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-[#07575B] flex items-center gap-2">
+                            <span class="bg-[#07575B]/10 text-[#07575B] text-xs px-2.5 py-1 rounded-full uppercase">Gov. Owner Step</span>
+                            Standard Timeline Update
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The Governance Owner ensures that the project schedule in MS Planner is kept up to date, feeding directly into the global Power BI analytics.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-status_rep" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-[#07575B] flex items-center gap-2">
+                            <span class="bg-[#07575B]/10 text-[#07575B] text-xs px-2.5 py-1 rounded-full uppercase">Gov. Owner Step</span>
+                            Monthly Status Report
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Generates the consolidated monthly status report for leadership, detailing capacity bottlenecks, postponements, and schedule adherence.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-scope_def" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full uppercase">Leadership Step</span>
+                            Scope Definition
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The Site Leader and Project Manager define the specific technical scope and deliverables required for the project.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-timeline_val" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full uppercase">Leadership Step</span>
+                            Timeline Validation
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Validates the planned project timeline in MS Planner, ensuring resource allocation is realistic before committing to the schedule.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-proj_tasks_ldr" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full uppercase">Leadership Step</span>
+                            Project Tasks Follow-up
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Conducts weekly follow-ups with the team to review task progress, resolve operational blockers, and approve postponement requests.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-tasks_rec" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full uppercase">Team Step</span>
+                            Project Tasks Received
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Team members receive their assigned tasks in MS Planner, reviewing the requirements, start dates, and due dates.
+                        </p>
+                    </div>
+
+                    <div id="flow-detail-tasks_upd" class="flow-detail-panel hidden space-y-3">
+                        <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full uppercase">Team Step</span>
+                            Project Tasks Updates
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Team members update their task status in MS Planner and log their daily actual hours in the Work Log App.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 px-6 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+            <p>© 2026 Global I&D Centers. All rights reserved.</p>
+            <div class="flex gap-6">
+                <span class="hover:text-white cursor-pointer">Proprietary & Confidential</span>
+                <span class="hover:text-white cursor-pointer">Do Not Distribute</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // TAB SWITCHING LOGIC
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Show selected tab content
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+
+            // Reset all tab button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:bg-slate-100";
+            });
+
+            // Set active tab button style
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.className = "tab-btn flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 bg-[#003B46] text-white";
+        }
+
+        // TOOLS PLAYBOOK SWITCHING LOGIC
+        function selectPlaybookTool(toolId) {
+            // Hide all playbook panels
+            document.querySelectorAll('.playbook-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Show selected playbook panel
+            document.getElementById(`playbook-${toolId}`).classList.remove('hidden');
+
+            // Reset all tool button styles
+            document.querySelectorAll('.tool-tab-btn').forEach(btn => {
+                btn.className = "tool-tab-btn p-4 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm transition-all duration-200 flex flex-col items-center gap-2 hover:bg-slate-50";
+            });
+
+            // Set active tool button style
+            const activeBtn = document.getElementById(`tool-btn-${toolId}`);
+            activeBtn.className = "tool-tab-btn p-4 rounded-xl border-2 border-[#003B46] bg-[#003B46]/5 text-[#003B46] font-bold text-sm transition-all duration-200 flex flex-col items-center gap-2";
+        }
+
+        // MEETING TIERS SWITCHING LOGIC
+        function selectMeetingTier(tierId) {
+            // Hide all tier detail panels
+            document.querySelectorAll('.tier-detail-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Show selected tier detail panel
+            document.getElementById(`tier-detail-${tierId}`).classList.remove('hidden');
+
+            // Reset all diagram node styles
+            document.getElementById('diagram-tier2').className = "tier-node cursor-pointer w-full lg:w-64 bg-emerald-600/80 text-white p-5 rounded-xl shadow-md border border-emerald-500 hover:scale-105 transition-all duration-200 text-center";
+            document.getElementById('diagram-tier1').className = "tier-node cursor-pointer w-full lg:w-64 bg-[#07575B]/80 text-white p-5 rounded-xl shadow-md border border-[#07575B] hover:scale-105 transition-all duration-200 text-center";
+            document.getElementById('diagram-tier3').className = "tier-node cursor-pointer w-full lg:w-64 bg-[#003B46]/80 text-white p-5 rounded-xl shadow-md border border-[#003B46] hover:scale-105 transition-all duration-200 text-center";
+
+            // Set active diagram node style (full opacity and border highlight)
+            if (tierId === 'tier2') {
+                document.getElementById('diagram-tier2').className = "tier-node cursor-pointer w-full lg:w-64 bg-emerald-600 text-white p-5 rounded-xl shadow-md border-2 border-emerald-400 scale-105 transition-all duration-200 text-center";
+            } else if (tierId === 'tier1') {
+                document.getElementById('diagram-tier1').className = "tier-node cursor-pointer w-full lg:w-64 bg-[#07575B] text-white p-5 rounded-xl shadow-md border-2 border-[#66A5AD] scale-105 transition-all duration-200 text-center";
+            } else if (tierId === 'tier3') {
+                document.getElementById('diagram-tier3').className = "tier-node cursor-pointer w-full lg:w-64 bg-[#003B46] text-white p-5 rounded-xl shadow-md border-2 border-[#66A5AD] scale-105 transition-all duration-200 text-center";
+            }
+        }
+
+        // FLOWCHART FILTERING LOGIC
+        function filterFlowchart(roleId) {
+            // Reset all swimlanes opacity
+            document.getElementById('lane-pmo').style.opacity = "1";
+            document.getElementById('lane-gov').style.opacity = "1";
+            document.getElementById('lane-ldr').style.opacity = "1";
+            document.getElementById('lane-tem').style.opacity = "1";
+
+            // Apply filter opacity if not 'all'
+            if (roleId !== 'all') {
+                if (roleId !== 'pmo') document.getElementById('lane-pmo').style.opacity = "0.25";
+                if (roleId !== 'gov') document.getElementById('lane-gov').style.opacity = "0.25";
+                if (roleId !== 'ldr') document.getElementById('lane-ldr').style.opacity = "0.25";
+                if (roleId !== 'tem') document.getElementById('lane-tem').style.opacity = "0.25";
+            }
+
+            // Reset all filter button styles
+            document.querySelectorAll('.flow-filter-btn').forEach(btn => {
+                btn.className = "flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all";
+            });
+
+            // Set active filter button style
+            document.getElementById(`flow-btn-${roleId}`).className = "flow-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-[#003B46] text-white transition-all";
+        }
+
+        // FLOWCHART NODE DETAIL SHOW/HIDE
+        function showFlowDetail(nodeId) {
+            // Hide all detail panels
+            document.querySelectorAll('.flow-detail-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Show selected detail panel
+            document.getElementById(`flow-detail-${nodeId}`).classList.remove('hidden');
+
+            // Reset all node border highlights
+            document.querySelectorAll('.flow-node').forEach(node => {
+                node.classList.remove('border-[#003B46]', 'border-[#07575B]', 'border-slate-400', 'ring-2', 'ring-[#003B46]/20');
+            });
+
+            // Add highlight to clicked node
+            event.currentTarget.classList.add('ring-2', 'ring-[#003B46]/20');
+        }
+    </script>
+</body>
+</html>
