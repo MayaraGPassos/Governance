@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+  font-family: Segoe UI;
+  margin: 0;
+  padding: 20px;
+  background: transparent;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.blue { background: #0078d4; }
+.green { background: #107c10; }
+.red { background: #d13438; }
+
+#detail {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f3f2f1;
+  display: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Dashboard de Projetos</h2>
+
+<div class="container">
+
+  <div class="card blue" onclick="showDetail('Projetos Ativos', 24)">
+    <h3>Projetos Ativos</h3>
+    <h1>24</h1>
+  </div>
+
+  <div class="card green" onclick="showDetail('Concluídos', 18)">
+    <h3>Concluídos</h3>
+    <h1>18</h1>
+  </div>
+
+  <div class="card red" onclick="showDetail('Atrasados', 6)">
+    <h3>Atrasados</h3>
+    <h1>6</h1>
+  </div>
+
+</div>
+
+<div id="detail"></div>
+
+<script>
+function showDetail(label, value) {
+  var el = document.getElementById("detail");
+  el.style.display = "block";
+  el.innerHTML =
+    "<strong>Categoria:</strong> " + label + "<br>" +
+    "<strong>Quantidade:</strong> " + value;
+}
+</script>
+
+</body>
+</html>
